@@ -1,0 +1,434 @@
+:root {
+    --overlay: rgba(0, 0, 0, .7);
+    --primary-color: rgba(12, 46, 156, .5);
+    --main-blue: #3282b8;
+    --menu-speed: .75s;
+}
+
+/* RESET */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* GLOBAL STYLES */
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    position: relative;
+    z-index: 1;
+
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Courier Prime', monospace;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+/* UTILITIES */
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.primary-text {
+    color: var(--main-blue);
+    padding: 1rem 2rem;
+    box-shadow: 0 10px 50px #fff;
+}
+
+.primary-text-dark {
+    color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 10px 50px #000;
+}
+
+.banner {
+    width: 100%;
+    height: 45vh;
+    margin: auto;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+#showcase {
+    background: var(--overlay);
+    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+#showcase:before {
+    content: "";
+    background: url("https://images.unsplash.com/photo-1553158399-3796bdbc82fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* IMG SLIDER */
+
+.slider-container {
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+    flex: 2;
+}
+
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slide {
+    width: 20%;
+    transition: .6;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+/* SLIDER NAVIGATION */
+
+.navigation {
+    position: absolute;
+    bottom: 2rem;
+    right: 20%;
+    display: flex;
+}
+
+.bar {
+    width: 5rem;
+    height: 1rem;
+    border: .2rem solid #fff;
+    margin: 1rem;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.bar:hover {
+    background: #fff;
+}
+
+input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+#r1:checked~.s1 {
+    margin-left: 0;
+}
+
+#r2:checked~.s1 {
+    margin-left: -20%;
+}
+
+#r3:checked~.s1 {
+    margin-left: -40%;
+}
+
+#r4:checked~.s1 {
+    margin-left: -60%;
+}
+
+#r5:checked~.s1 {
+    margin-left: -80%;
+}
+
+/* BIO */
+
+.bio {
+    flex: 2;
+    margin: 3rem;
+}
+
+.bio li {
+
+    font-size: 1.8rem;
+    letter-spacing: .3rem;
+}
+
+.bio i {
+    color: var(--main-blue);
+    font-size: 4rem;
+    padding: .5rem;
+}
+
+/* CONTACT */
+
+#contact {
+    background: linear-gradient(to right, #fff, var(--main-blue), #000, var(--main-blue), #fff);
+}
+
+.inner-contact {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#contact h2 {
+    text-align: center;
+    padding: 2rem;
+}
+
+.items {
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+}
+
+.items i {
+    font-size: 3rem;
+    color: #fff;
+    padding: 2rem;
+    background: var(--main-blue);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.items a {
+    color: #fff;
+    font-size: 1.8rem;
+    letter-spacing: .2rem;
+}
+
+/* MAP/SCHEDULE */
+
+#schedule {
+    background: linear-gradient(to right, #fff, var(--main-blue), #000, var(--main-blue), #fff);
+}
+
+.inner-schedule {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding: 3rem;
+}
+
+.openning-hours {
+    background: url("../images/pic3.jpg") no-repeat center center/cover;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.openning-hours:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay);
+}
+
+.openning-hours i {
+    font-size: 6rem;
+    color: var(--main-blue);
+    padding: 1rem;
+}
+
+.openning-hours>div {
+    z-index: 1;
+}
+
+.openning-hours p {
+    font-size: 3rem;
+    color: #fff;
+}
+
+/* FOOTER */
+
+#footer {
+    background: var(--main-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer ul li {
+    display: inline;
+}
+
+#footer a {
+    padding: 3rem;
+    display: inline-block;
+}
+
+#footer i {
+    color: #fff;
+    font-size: 3rem;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media(max-width: 768px) {
+    #main-nav {
+        display: none;
+    }
+
+    .menu-wrap {
+        display: block !important;
+    }
+
+    #showcase {
+        display: block;
+        width: 100%;
+    }
+
+    .bio,
+    .slider-container {
+        width: 100%;
+    }
+
+    .inner-contact {
+        display: block;
+    }
+
+    .items a {
+        font-size: 2.5rem !important;
+    }
+
+    .items i {
+        font-size: 5rem;
+    }
+
+    .inner-schedule {
+        display: block;
+    }
+
+    .openning-hours {
+        width: 100%;
+        margin: 1rem auto;
+    }
+
+    .map iframe {
+        width: 100%;
+    }
+
+    .navigation {
+        right: 25%;
+        display: flex;
+    }
+
+}
+
+@media(max-width: 500px) {
+    .navigation {
+        right: 4%;
+        display: flex;
+    }
+
+    .bio h2 {
+        text-align: center;
+        margin-top: 2rem;
+
+    }
+
+    .bio {
+        margin: 0;
+    }
+
+    .bio li {
+
+        font-size: 2.3rem;
+        letter-spacing: .1rem;
+        padding: 1rem;
+    }
+
+    .bio i {
+        font-size: 5rem;
+        padding: 1rem;
+    }
+
+    #contact {
+        background: linear-gradient(45deg, #fff, var(--main-blue), #000, var(--main-blue), #fff);
+    }
+
+    .items a {
+        letter-spacing: 0;
+    }
+
+    #footer ul li {
+        display: inline;
+    }
+
+    #footer a {
+        padding: 2rem;
+    }
+
+    #footer i {
+        font-size: 2rem;
+    }
+
+}
+
+@media(max-width: 375px) {
+    .bar {
+        width: 4.2rem;
+    }
+
+    .bio {
+        margin: 1rem;
+    }
+
+    .bio li {
+
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        padding: .5rem;
+    }
+
+
+    .items i {
+        font-size: 3rem;
+    }
+
+    .items a {
+        font-size: 1.7rem !important;
+    }
+
+}
